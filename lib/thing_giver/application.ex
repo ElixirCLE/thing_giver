@@ -7,6 +7,7 @@ defmodule ThingGiver.Application do
 
   def start(_type, _args) do
     # List all child processes to be supervised
+    # TODO: put secret in an env var and change it in slack
     Slack.Bot.start_link(SlackRtm, [], "xoxb-555264486627-556478095367-cTUJgbS8urgxah44pC04H3g4")
     children = [
       # Start the Ecto repository
