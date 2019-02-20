@@ -16,6 +16,8 @@ defmodule ThingGiverWeb.Router do
   scope "/", ThingGiverWeb do
     pipe_through :browser
 
+    resources "/gifts", GiftController
+
     get "/", PageController, :index
   end
 

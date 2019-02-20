@@ -1,0 +1,28 @@
+<h1>Show Gift</h1>
+
+<ul>
+
+  <li>
+    <strong>Giver:</strong>
+    <%= @gift.giver %>
+  </li>
+
+  <li>
+    <strong>Receiver:</strong>
+    <%= @gift.receiver %>
+  </li>
+
+  <li>
+    <strong>Verb:</strong>
+    <%= @gift.verb %>
+  </li>
+
+  <li>
+    <strong>Thing:</strong>
+    <%= @gift.thing %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: Routes.gift_path(@conn, :edit, @gift) %></span>
+<span><%= link "Back", to: Routes.gift_path(@conn, :index) %></span>

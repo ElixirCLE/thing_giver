@@ -1,0 +1,32 @@
+<h1>Listing Gifts</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Giver</th>
+      <th>Receiver</th>
+      <th>Verb</th>
+      <th>Thing</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for gift <- @gifts do %>
+    <tr>
+      <td><%= gift.giver %></td>
+      <td><%= gift.receiver %></td>
+      <td><%= gift.verb %></td>
+      <td><%= gift.thing %></td>
+
+      <td>
+        <%= link "Show", to: Routes.gift_path(@conn, :show, gift) %>
+        <%= link "Edit", to: Routes.gift_path(@conn, :edit, gift) %>
+        <%= link "Delete", to: Routes.gift_path(@conn, :delete, gift), method: :delete, data: [confirm: "Are you sure?"] %>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<span><%= link "New Gift", to: Routes.gift_path(@conn, :new) %></span>
